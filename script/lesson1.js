@@ -2,7 +2,7 @@ console.log("hello world!");
 
 let name = "Edin";
 let age = 21;
-let favoriteColor = "green"
+let favoriteColor = "green";
 
 console.log(`my name is ${name}, Im ${age} years old and my favorite color is ${favoriteColor}`);
 
