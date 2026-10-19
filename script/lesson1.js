@@ -12,4 +12,4 @@ let friends = 5;
 console.log(cookies / friends);
 console.log(cookies + friends);
 console.log(cookies - friends);
-console.log(cookies * friends);
+console.log(cookies * friends); 
