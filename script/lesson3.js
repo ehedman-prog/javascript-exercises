@@ -7,6 +7,6 @@ function isValidPassword (password, username) {
         return false;
     else 
         return true;
-};
+}
 
 console.log(isValidPassword ("123456789", "helloworld"));
