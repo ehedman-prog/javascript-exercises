@@ -5,23 +5,25 @@
 // Provide feedback if the guess is too high or too low.
 
 function guessNumberGame() {
-    const target = Math.floor(Math.random() * 10)+1;
+    const target = Math.floor(Math.random() * 10) + 1;
     let guess = null;
-    let instruction = ("The number is between 1 and 10. Make a guess:")
+    let instruction = ("The number is between 1 and 10. Make a guess:");
 
     while (guess !== target) {
-        //console.log(`Target: ${target}. Guess: ${guess}`);
+        //console.log(`Target: ${target}. Guess: ${guess}`); 
+        // Used for testing only or the answer is given away
         guess = parseFloat(prompt(instruction));
 
         if (guess < target) {
-            instruction = `The number is higher than ${guess}. The number is between 1 and 10. Make a guess:`
-            } else {
-              instruction = `The number is lower than ${guess}. The number is between 1 and 10. Make a guess:`
-            }
-            
+            instruction = `The number is higher than ${guess}. The number is between 1 and 10. Make a guess:`;
+        }
+        else if (guess > target) {
+            instruction = `The number is lower than ${guess}. The number is between 1 and 10. Make a guess:`;
+        }
+
 
     }
-    console.log(`You guessed it! The number was ${target}. Congrats you win!`)
+    console.log(`You guessed it! The number was ${target}. Congrats you win!`);
 }
 
 guessNumberGame();
