@@ -6,10 +6,18 @@ let account = {
     },
     getBalance () {
         return this.balance
+    },
+    deposit (amount) {
+        if (amount > 0) {
+        this.balance = this.balance + amount    
+        }
+    },
+    withdrawal (amount) {
+        if (amount > 0 && amount <= this.balance) {
+        this.balance = this.balance - amount    
+        }
     }
 };
-
-console.log(account.getAccountName());
 
 function atm () {
     const message = parseFloat(
@@ -20,12 +28,30 @@ function atm () {
 
     switch (message) {
         case 1:
-            // get account name
+            console.log(account.getAccountName());
+            break
         case 2:
-            // see balance
+            console.log(account.getBalance());
+            break
         case 3:
-            // make deposit
+            const sum = parseFloat (
+               prompt (
+                 "How much would you like to deposit?"
+                 ) 
+            );
+            account.deposit(sum)
+            console.log(account.getBalance())
+            break
         case 4:
-            // make a withdrawl
+            const total = parseFloat (
+               prompt (
+                 "How much would you like to withdraw?"
+                 ) 
+            );
+            account.withdrawal(total)
+            console.log(account.getBalance())
+            break
     }
 }
+
+atm();
