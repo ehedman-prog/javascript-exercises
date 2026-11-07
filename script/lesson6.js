@@ -31,15 +31,44 @@ Requirements:
 
 · markAsRead(title) – finds a book by title and sets isRead to true */
 
-/* 1. 
+/* To do:
+0. look up: push( )  forEach( )  find( )  filter( ) 
+0.1 create the "running" variable
+1. create an array to store the games - library
+2. make obejcts to represent games and include properties title, publisher, isPlayed (true/false)
+   2.1 figure out which games to list
+3. create functions to
+   3.1 addGame 
+       3.1.1 ask the user for title and publisher 
+   3.2 listGames 
+   3.3 markAsPlayed(title)
+       3.3.1 error for when a title can't be found
 */
+
+let library = [
+    {title: "", publisher: "", isPlayed: false}
+];
+
+let running = true;
+
+function addGame() {
+
+}
+
+function listGames() {
+
+} 
+
+function markAsPlayed(title) {
+
+}
 
 while (running) {
     const choice = prompt(`
         Game Tracker
         1. Add Game
         2. List Games
-        3. Mark Game as Completed
+        3. Mark Game as Played
         4. Exit
         Enter your choice:`);
 
@@ -48,11 +77,11 @@ while (running) {
             addGame();
             break;
         case "2":
-            listGame();
+            listGames();
             break;
         case "3":
-            const title = prompt ("enter the title of the game to mark as completed")
-            markAsCompleted(title);
+            const title = prompt("enter the title of the game to mark as played")
+            markAsPlayed(title);
             break;
         case "4":
             running = false;
