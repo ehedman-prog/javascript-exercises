@@ -32,9 +32,6 @@ Requirements:
 · markAsRead(title) – finds a book by title and sets isRead to true */
 
 /* To do:
-0. look up: push( )  forEach( )  find( )  filter( ) 
-0.1 create the "running" variable
-1. create an array to store the games - library
 2. make obejcts to represent games and include properties title, publisher, isPlayed (true/false)
    2.1 figure out which games to list
 3. create functions to
@@ -46,21 +43,39 @@ Requirements:
 */
 
 let library = [
-    {title: "", publisher: "", isPlayed: false}
+    { title: "", publisher: "", isPlayed: false }
 ];
 
 let running = true;
 
 function addGame() {
-
+    const title = prompt(
+        "What's the title of the game?"
+    )
+    const publisher = prompt(
+        "Who's the publisher of the game?"
+    )
+    const newGame = { title: title, publisher: publisher, isPlayed: false };
+    library.push(newGame)
 }
 
 function listGames() {
-
-} 
+    library.forEach(function (game) {
+        console.log(game.title, game.publisher, game.isPlayed);
+    });
+}
 
 function markAsPlayed(title) {
+    const gameSearch = library.find(function (game) {
+        return title === game.title 
+    });
+    if (gameSearch) {
+        gameSearch.isPlayed = true
+    } else {
+        alert ("that game was not found")
+    }
 
+    console.log(gameSearch);
 }
 
 while (running) {
